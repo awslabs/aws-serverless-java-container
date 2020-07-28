@@ -24,7 +24,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
+//import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -83,6 +83,7 @@ public abstract class LambdaContainerHandler<RequestType, ResponseType, Containe
     static {
         registerAfterBurner();
     }
+
 
     private static void registerAfterBurner() {
         objectMapper.registerModule(new AfterburnerModule());
