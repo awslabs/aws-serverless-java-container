@@ -80,16 +80,14 @@ public abstract class LambdaContainerHandler<RequestType, ResponseType, Containe
 
     private static ContainerConfig config = ContainerConfig.defaultConfig();
     private static ObjectMapper objectMapper = new ObjectMapper();
-    /*static {
-        try {
-            if (Class.forName("com.fasterxml.jackson.module.afterburner.AfterburnerModule") != null) {
-                objectMapper.registerModule(new AfterburnerModule());
-            }
-        } catch (ClassNotFoundException e) {
-            // TODO: nothing here
-        }
-    }*/
+    static {
+        registerAfterBurner();
+    }
 
+
+    private static void registerAfterBurner() {
+        objectMapper.registerModule(new AfterburnerModule());
+    }
 
 
     //-------------------------------------------------------------
